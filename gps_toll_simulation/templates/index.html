@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GPS Toll Simulation</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #0066cc;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #controls {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            margin: 0 10px;
+        }
+        button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004080;
+        }
+        #map {
+            height: 400px;
+            width: 80%;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>GPS Toll Simulation</h1>
+    <div id="container">
+        <div id="controls">
+            <label for="source">Source:</label>
+            <input type="text" id="source" value="Mumbai">
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" value="Pune">
+            <button onclick="calculateToll()">Get Toll</button>
+            <button onclick="getTollBooths()">Get Toll Booths</button>
+            <button onclick="simulateSpeed()">Simulate Speed</button>
+            <a href="/about">About</a>
+        </div>
+        <p id="toll_result"></p>
+        <p id="distance_result"></p>
+        <p id="speed_result"></p>
+        <div id="map"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
