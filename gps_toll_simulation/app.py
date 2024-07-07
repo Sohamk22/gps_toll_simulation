@@ -4,13 +4,12 @@ import random
 
 app = Flask(__name__)
 
-# Fixed toll rate per kilometer
-TOLL_RATE_PER_KM = 1.5  # example rate in rupees
+TOLL_RATE_PER_KM = 1.5 
 
-# Speed limit
-SPEED_LIMIT = 80  # km/h
 
-# Coordinates for cities
+SPEED_LIMIT = 80 
+
+
 city_coords = {
     'Mumbai': (19.0760, 72.8777),
     'Pune': (18.5204, 73.8567),
@@ -20,10 +19,9 @@ city_coords = {
     'Kolkata': (22.5726, 88.3639)
 }
 
-# Example toll booth locations for routes
+
 toll_booths_data = {
-    # Existing toll booth data
-    # ...
+
 }
 
 @app.route('/')
